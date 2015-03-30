@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
   <title>Note to Self</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -15,11 +17,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav>
-  <%= link_to "Hello World! Write some words ;)", stories_path %>
-</nav>
+<div class="container">
+  <div class="jumpbotron">
+      <p><%= link_to "Home", stories_path %><img class="glyphicon glyphicon-home"></p>
+  </div>
+  <div class="time pull-right">
+    <%= current_date_and_time%>
+  </div>
 
 <%= yield %>
+
+</div>
 
 </body>
 </html>
