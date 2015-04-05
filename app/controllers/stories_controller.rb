@@ -1,5 +1,7 @@
 class StoriesController < ApplicationController
+  before_action :only_allow_signed_in_users, except: [:index, :show]
   before_action :set_story, only: [:show, :edit, :update, :destroy]
+
 
   # GET /stories
   # GET /stories.json
