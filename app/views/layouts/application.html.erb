@@ -1,29 +1,38 @@
-doctype html
-html lang="en" 
-head
-  title Note to Self
-  meta charset="utf-8" /
-  meta content="width=device-width, initial-scale=1" name="viewport" /
-  | <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %
-  | <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %
-  | <%= csrf_meta_tags %
-  /! Latest compiled and minified CSS
-body
-  .container
-    | <% flash.each do |type, message| %
-    .type class=("<%= %>") 
-      /! <p><%= message %></p
-    | <% end %
-    | <% if user_signed_in? %
-    li Signed in in as <%= current_user.email %
-    li <%= link_to "Sign Out", sign_out_path, method: :delete %
-    | <% else %
-    li <%= link_to "Sign In", sign_in_path %
-    | <% end %
-    .jumpbotron style="color:orange" 
-      p
-        | <%= link_to "Home", stories_path %
-        img.glyphicon.glyphicon-home/
-    .time.pull-right
-      | <%= current_date_and_time%
-    | <%= yield %
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>Note to Self</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
+</head>
+<body>
+
+<div class="container">
+  <% flash.each do |type, message| %>
+    <div class="<%= type %>">
+      <!-- <p><%= message %></p> -->
+    </div>
+  <% end %>
+  <% if user_signed_in? %>
+    <li>Signed in in as <%= current_user.email %></li>
+    <li><%= link_to "Sign Out", sign_out_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to "Sign In", sign_in_path %></li>
+  <% end %>
+  <div class="jumpbotron" style="color:orange">
+      <p><%= link_to "Home", stories_path %><img class="glyphicon glyphicon-home"></p>
+  </div>
+  <div class="time pull-right">
+    <%= current_date_and_time%>
+  </div>
+
+<%= yield %>
+
+</div>
+
+</body>
+</html>
