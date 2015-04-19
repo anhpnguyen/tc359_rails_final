@@ -1,0 +1,28 @@
+= form_for(@story) do |f|
+  - if @story.errors.any?
+    .error_explanation
+      h2 %= pluralize(@story.errors.count, "error") %> prohibited this story from being saved
+
+      ul
+        - @story.errors.full_messages.each do |message|
+          li= message
+
+  .field
+    = f.label :date
+    = f.datetime_select :date 
+
+  .field
+    = f.label :subject 
+    = f.text_area :subject 
+  
+  .field
+    = f.label :note 
+    = f.text_area :note 
+
+  .field
+    = f.label :comment 
+    = f.text_area :comment 
+
+  .actions
+    = f.submit
+

@@ -1,0 +1,27 @@
+.new-story
+p#notice = notice 
+
+p
+  <strong>Date:</strong>
+  = @story.date
+
+
+p
+  <strong>Subject:</strong>
+  = @story.subject
+
+
+p
+  <strong>Note:</strong>
+  = @story.note
+
+
+p
+  <strong>Comment:</strong>
+  = @story.comment
+
+
+
+= link_to 'Edit', edit_story_path(@story)|
+= link_to 'Back', stories_path
+
