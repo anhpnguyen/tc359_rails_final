@@ -13,22 +13,17 @@ html lang="en"
   body
     .container
     h3 WELCOME
-    <% flash.each do |type, message| %>
-      <div class="<%= type %>">
-        <!-- <p><%= message %></p> -->
-      </div>
-    <% end %>
     - if user_signed_in?
-      p Signed in in as <%= current_user.email %>
+      p Signed in in as = current_user.email
       = link_to "Sign Out", sign_out_path, method: :delete 
     - else
       = link_to "Sign In", sign_in_path
-    <% end %>
+
     .jumpbotron style="color:orange"
       = link_to "Home", stories_path
     
     .time.pull-right
-      <%= current_date_and_time%>
+      = current_date_and_time
 
       = yield
 
