@@ -5,15 +5,15 @@ p#notice = notice
 .list
 
 - @stories.each do |story|
-  h2 = story.subject
-  p.pull-right Date: = story.date 
-  p = story.note 
-  p Side note: = story.comment
+    h2 = story.subject
+    p.pull-right Date: = story.date 
+    p = story.note 
+    p Side note: = story.comment
   - if user_signed_in?
-  p.pull-right 
-  = link_to 'Show ', story 
-  = link_to 'Edit ', edit_story_path(story) 
-  = link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' }
+    p.pull-right 
+    = link_to 'Show ', story 
+    = link_to 'Edit ', edit_story_path(story) 
+    = link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' }
   
   hr
 
