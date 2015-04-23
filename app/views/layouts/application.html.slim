@@ -5,34 +5,34 @@ html lang="en"
     title Blog
     meta charset='utf-8'
     meta name="keywords" content="template language"
-    meta name="viewport" content="width=device-width, initial-scale=1
+    meta name="viewport" content="width=device-width",initial-scale=1
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags 
 
   body
     .container
-    h3 WELCOME
-    - if user_signed_in?
+      h3 WELCOME
+      - if user_signed_in?
         p Signed in in as = current_user.email
         = link_to "Sign Out", sign_out_path, method: :delete 
-    - else
-        = link_to "Sign In", sign_in_path
+      - else
+          = link_to "Sign In", sign_in_path
 
-    .jumpbotron style="color:orange"
-      = link_to "Home", stories_path
-    
-    .time.pull-right
-      = current_date_and_time
+      .jumpbotron style="color:orange"
+        = link_to "Home", stories_path
+      
+      .time.pull-right
+        = current_date_and_time
 
-      = yield
+        = yield
 
-    .button1 
-      button type="button" Button #1
+      .button1 
+        button type="button" Button #1
 
-    .button2 
-      button type="button" Button #2
+      .button2 
+        button type="button" Button #2
 
-    .button3 
-      button type="button" Button #3
+      .button3 
+        button type="button" Button #3
 

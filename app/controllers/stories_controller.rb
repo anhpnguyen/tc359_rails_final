@@ -7,6 +7,8 @@ class StoriesController < ApplicationController
   # GET /stories.json
   def index
     @stories = Story.all
+    # @stories = Story.search(params[:search])
+    # @stories = @stories.search(params[:search]) if parmas[:search].present?
   end
 
   # GET /stories/1
@@ -27,7 +29,6 @@ class StoriesController < ApplicationController
   # POST /stories.json
   def create
     @story = Story.new(story_params)
-
     respond_to do |format|
       if @story.save
         format.html { redirect_to @story, notice: 'Story was successfully created.' }

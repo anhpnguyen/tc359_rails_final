@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'simple_form'
 gem "passenger"
 gem 'slim'
 gem 'rails', '4.2.0'

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :stories
+  resources :user
   root 'stories#index'
   get '/sign-in' => 'sessions#new'
   delete '/sign-out' => 'sessions#destroy'
