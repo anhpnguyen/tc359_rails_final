@@ -14,7 +14,7 @@ p#notice = notice
   p = story.note 
   p Side note: = story.comment
   - if user_signed_in?
-    p.pull-right 
+    .pull-right 
     = link_to 'Show ', story 
     = link_to 'Edit ', edit_story_path(story) 
     = link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' }

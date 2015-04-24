@@ -1,25 +1,24 @@
 = simple_form_for(@story) do |f|
   - if @story.errors.any?
-    .error_explanation
+    f.error_explanation
       h2 = pluralize(@story.errors.count, "error") prohibited this story from being saved
       .field
-        = f.label :date
-        = f.datetime_select :date 
+        = f.input :date
 
       .field
-        = f.label :subject 
-        = f.text_area :subject 
+          = f.label :subject 
+          = f.input :subject 
       
       .field
         = f.label :note 
-        = f.text_area :note 
+        = f.input :note 
 
       .field
         = f.label :comment 
-        = f.text_area :comment 
+        = f.input :comment 
 
       .actions
-        = f.submit
+        = f.button :submit
 
 
     ul
