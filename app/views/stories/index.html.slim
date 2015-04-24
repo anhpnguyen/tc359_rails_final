@@ -2,7 +2,10 @@ p#notice = notice
 .page-header style="color:orange"
   h1 Every day is a different story. Here's mine..
 
-
+- form_tag stories_path, :method => 'get' do 
+  p
+    = text_field_tag :search, params[:search] 
+    = submit_tag "Search", :name => nil
 
 .list
 - @stories.each do |story|

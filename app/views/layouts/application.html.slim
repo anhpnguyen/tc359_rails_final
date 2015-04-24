@@ -5,7 +5,7 @@ html lang="en"
     title Blog
     meta charset='utf-8'
     meta name="keywords" content="template language"
-    meta name="viewport" content="width=device-width",initial-scale=1
+    meta name="viewport" content="width=device-width,initial-scale=1"
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags 
@@ -25,7 +25,7 @@ html lang="en"
       .time.pull-right
         = current_date_and_time
 
-        = yield
+      = yield
 
       .button1 
         button type="button" Button #1
