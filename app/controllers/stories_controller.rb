@@ -7,7 +7,7 @@ class StoriesController < ApplicationController
   # GET /stories.json
   def index
     @stories = Story.all
-    # @stories = Story.search(params[:search])
+    @stories = Story.search(params[:search])
     # @stories = @stories.search(params[:search]) if parmas[:search].present?
   end
 
