@@ -1,33 +1,29 @@
 = simple_form_for(@story) do |f|
   - if @story.errors.any?
     f.error_explanation
-      h2 = pluralize(@story.errors.count, "error") prohibited this story from being saved
+      h2 
+        = pluralize(@story.errors.count, "error") 
+        ' prohibited this story from being saved
+      ul
+        - @story.errors.full_messages.each do |message|
+          li= message
+  .field
+    = f.input :date
 
-      .field
-        = f.input :date
+  .field
+    = f.input :subject 
 
-      .field
-          = f.label :subject
-          = f.input :subject 
-      
-      .field
-        = f.label :note 
-        = f.input :note, placeholder: "Write something here"
+  .field
+    = f.input :note, placeholder: "Write something here"
 
-      .field
-        = f.label :comment 
-        = f.input :comment 
+  .field
+    = f.input :comment 
 
-      .field
-        = link_to f.subject, :controller => :authors, :action => :new, :id => item.id
-
-      .actions
-        = f.button :submit
+  .actions
+    = f.button :submit
 
 
-    ul
-      - @story.errors.full_messages.each do |message|
-        li= message
+
 
 
 
