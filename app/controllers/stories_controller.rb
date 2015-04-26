@@ -8,7 +8,6 @@ class StoriesController < ApplicationController
   def index
     @stories = Story.all
     @stories = Story.search(params[:search])
-    # @stories = @stories.search(params[:search]) if parmas[:search].present?
   end
 
   # GET /stories/1

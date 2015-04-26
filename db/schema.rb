@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331151354) do
+ActiveRecord::Schema.define(version: 20150426053332) do
+
+  create_table "authors", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "date"
+    t.text     "contribution"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "stories", force: :cascade do |t|
     t.datetime "date"

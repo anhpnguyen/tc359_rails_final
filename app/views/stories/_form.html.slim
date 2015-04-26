@@ -2,6 +2,7 @@
   - if @story.errors.any?
     f.error_explanation
       h2 = pluralize(@story.errors.count, "error") prohibited this story from being saved
+
       .field
         = f.input :date
 
@@ -16,6 +17,9 @@
       .field
         = f.label :comment 
         = f.input :comment 
+
+      .field
+        = link_to f.subject, :controller => :authors, :action => :new, :id => item.id
 
       .actions
         = f.button :submit

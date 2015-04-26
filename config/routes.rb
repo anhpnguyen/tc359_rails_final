@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :authors
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :stories
   resources :users
