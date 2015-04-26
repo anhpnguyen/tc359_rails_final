@@ -1,11 +1,11 @@
 = form_tag stories_path, :action => 'search', :method => 'get' do 
   = text_field_tag :search, params[:search], :id => 'search_field'
-  = submit_tag "Search", :name => nil
+  = submit_tag "Search", :subject => nil
 
 p#notice = notice
 .page-header style="color:orange"
   h1 Every day is a different story. Here's mine..
-  
+
 .list
 - @stories.each do |story|
   h2 = story.subject
