@@ -1,27 +1,28 @@
 .new-story
-p#notice = notice 
+  p#notice = notice 
 
-p
-  strong Date:
-  = @story.date
-
-
-p
-  strong Subject
-  = @story.subject
+  p
+    strong Date: 
+    = @story.date
 
 
-p
-  strong Note
-  = @story.note
+  p
+    strong Subject: 
+    = @story.subject
 
 
-p
-  strong Comment
-  = @story.comment
+  p
+    strong Note: 
+    = @story.note
+
+
+  p
+    strong Comment: 
+    = @story.comment
 
 
 
-= link_to 'Edit', edit_story_path(@story)|
-= link_to 'Back', stories_path
+  = link_to 'Edit', edit_story_path(@story) 
+  ' 
+  = link_to 'Back', stories_path
 

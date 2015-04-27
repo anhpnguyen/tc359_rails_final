@@ -1,4 +1,5 @@
 class Story < ActiveRecord::Base
+  self.per_page = 5
   has_many :author
   validates_presence_of :subject, :note
   def self.search(query)

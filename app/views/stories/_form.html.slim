@@ -1,4 +1,4 @@
-= simple_form_for(@story) do |f|
+= simple_form_for (@story), html: {class: 'form-horizontal'}, wrapper: :horizontal_form do |f|
   - if @story.errors.any?
     f.error_explanation
       h2 

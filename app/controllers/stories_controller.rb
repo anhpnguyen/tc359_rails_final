@@ -7,8 +7,13 @@ class StoriesController < ApplicationController
   # GET /stories.json
   def index
     @stories = Story.search params[:search]
+    @stories = Story.paginate(:page => params[:page]) # replaces Story.all
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: @stories }
+    #   format.js # add this line for your js template
+    # end
   end
-
   # GET /stories/1
   # GET /stories/1.json
   def show

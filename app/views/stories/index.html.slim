@@ -9,20 +9,24 @@ p#notice = notice
 .list
 - @stories.each do |story|
   h2 = story.subject
-  p.pull-right Date: = story.date 
+  p
+  .pull-right 
+    p 
+      ' Date:
+    = story.date 
   p = story.note 
   p 
     ' Side note: 
     = story.comment
   - if user_signed_in?
     .pull-right 
-    = link_to 'Show ', story 
-    = link_to 'Edit ', edit_story_path(story) 
-    = link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' }
-  
-  hr
+      = link_to 'Show ', story 
+      = link_to 'Edit ', edit_story_path(story) 
+      = link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' }
 
 br
+
+= will_paginate @stories
 
 = link_to 'New Story', new_story_path 
 
