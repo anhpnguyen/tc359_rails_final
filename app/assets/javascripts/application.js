@@ -16,7 +16,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  if ($('.pagination').length) {
+  if ($('.pagination').length > 0) {
     $(window).scroll(function() {
       var url = $('.pagination .next_page').attr('href');
       if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {

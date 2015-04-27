@@ -1,2 +1,2 @@
-$('#stories').append('<%= escape_javascript render(@stories) %>');
+$('#stories').append('<%= escape_javascript render("stories") %>');
 $('.pagination').replaceWith('<%= escape_javascript will_paginate(@stories) %>');
