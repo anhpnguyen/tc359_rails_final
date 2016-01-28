@@ -7,6 +7,7 @@
         ' Date:
       = story.date 
     p = story.note.truncate(27, separator:' ')
+      = link_to 'continue', story
     p 
       ' Side note: 
       = story.comment
