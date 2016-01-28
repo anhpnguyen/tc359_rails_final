@@ -1,4 +1,12 @@
-- @stories.each do |story|
-  .story
-    = story.subject
-    = story.note
+#stories.list
+  - @stories.each do |story|
+    h2 = story.subject
+    p
+    .pull-right 
+      p 
+        ' Date:
+      = story.date 
+    p = story.note.truncate(27, separator:' ')
+    p 
+      ' Side note: 
+      = story.comment
